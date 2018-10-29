@@ -13,11 +13,19 @@ var itemDelete = function(item) {
 $(document).ready(function(){
   $("#add").click(function(event){
     itemAdd($("#userInput").val());
-    $("#output").text(listArray);
+    var htmlForContactInfo = "";
+    listArray.forEach(function(contact) {
+    htmlForContactInfo += "<li>" + contact + "</li>";
+  });
+    $("#output").html(htmlForContactInfo);
   });
   $("#delete").click(function(event){
     itemDelete($("#userInput").val());
-    $("#output").text(listArray);
+    var htmlForContactInfo = "";
+    listArray.forEach(function(contact) {
+    htmlForContactInfo += "<li>" + contact + "</li>";
+  });
+    $("#output").html(htmlForContactInfo);
   });
 
   event.preventDefault();
